@@ -4,7 +4,7 @@ An AI-powered app that estimates construction project costs based on area, mater
 
 ## Tech Stack
 - Streamlit
-- OpenAI GPT-4 API
+- OpenAI GPT-4 API (v1.0.0+ compatible)
 - Pandas
 
 ## Run Locally
