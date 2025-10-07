@@ -1,5 +1,5 @@
+from openai import OpenAI
 import streamlit as st
-import openai
 import pandas as pd
 
 st.set_page_config(page_title="AI Construction Cost Estimator", page_icon="🏗️")
@@ -23,7 +23,7 @@ data = {
 rates = pd.DataFrame(data)
 
 if st.button("Estimate Cost"):
-    openai.api_key = st.secrets["OPENAI_API_KEY"]
+    client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
 
     # Base rate lookup
     rate_row = rates[rates["Location"].str.lower() == location.lower()]
@@ -40,7 +40,7 @@ if st.button("Estimate Cost"):
     """
 
     with st.spinner("Calculating..."):
-        response = openai.ChatCompletion.create(
+        response = client.chat.completions.create(
             model="gpt-4-turbo",
             messages=[{"role": "user", "content": prompt}],
             temperature=0.4
@@ -48,3 +48,4 @@ if st.button("Estimate Cost"):
 
     st.subheader("💰 Estimated Cost & Suggestions")
     st.write(response.choices[0].message.content)
+
