@@ -89,4 +89,4 @@ if st.button("Estimate Cost"):
     st.subheader("🤖 Gemini AI (Simulated)")
     st.write(gemini_response)
 
-    st.info("All AI responses are simulated for demo purposes. No real API calls are made.")
+    st.info("Thank You")
