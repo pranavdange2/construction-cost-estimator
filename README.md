@@ -19,7 +19,7 @@ Fully web-based using Streamlit.
 
 Frontend: Streamlit
 
-Backend/AI: Google Gemini AI (google-generativeai)
+Backend/AI: Google Gemini AI (google-generativeai)/OpenAI
 
 Data: Pandas (for material & regional rates)
 
